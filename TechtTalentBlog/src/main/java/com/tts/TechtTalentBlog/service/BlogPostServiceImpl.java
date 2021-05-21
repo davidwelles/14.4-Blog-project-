@@ -17,5 +17,16 @@ public class BlogPostServiceImpl implements BlogPostService {
         return blogPostRepository.save(blogPost);
     }
 
+    @Override
+    public Iterable<BlogPost> getAllBlogPosts() {
+        return blogPostRepository.findAll();
+    }
+
+    @Override
+    public void deletePostById(Long id) {
+        blogPostRepository.deleteById(id);
+    }
+
+
 }
 
