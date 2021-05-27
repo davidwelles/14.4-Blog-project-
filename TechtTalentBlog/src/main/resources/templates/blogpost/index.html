@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Blog Site</title>
-    <!--    <style>-->
-    <!--        body {-->
-    <!--        background-color:red !important;-->
-    <!--        }-->
-    <!--    </style>-->
-    <div th:replace="fragments/styling :: head-style" ></div>
+
+    <link href="webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/standard.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -30,21 +28,31 @@
                         <p style="text-align: left;" th:text="${blog.blogEntry}" />
                     </div>
                     <div class="panel-footer">
+
                         <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
                               class="form-horizontal">
                             <div class="form-group">
                                 <input type="hidden" name="_method" value="delete"/>
                                 <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
                             </div>
-                        </form>
 
+                        </form>
+                        <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="get"
+                              class="form-horizontal">
+                            <div class="form-group">
+                                <input type="hidden" name="_method" value="get"/>
+                                <button type="submit" class="btn btn-light" th:text="Get">Edit Post</button>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
-<div th:replace = "fragments/styling :: body-links"></div>
+
+<script src="webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

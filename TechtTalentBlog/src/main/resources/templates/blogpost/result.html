@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>Blog Site</title>
-  <div th:replace="fragments/styling :: head-style" ></div>
+  <link href="webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/standard.css" rel="stylesheet">
+  <div th th:replace="/fragments/styling :: head-style"></div>
 </head>
 <body>
 <div th:replace="fragments/navbar :: navbar" ></div>
@@ -19,9 +21,7 @@
           <p style="text-align: left;" th:text="${blogEntry}" />
         </div>
         <div class="panel-footer">
-          <!-- Link to Update -->
-          <!-- Link to Show  -->
-          <!--  Link to Destroy -->
+
           <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
           <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
         </div>
@@ -31,6 +31,7 @@
 </div>
 
 
-<div th:replace = "fragments/styling :: body-links"></div>
+<script src="webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

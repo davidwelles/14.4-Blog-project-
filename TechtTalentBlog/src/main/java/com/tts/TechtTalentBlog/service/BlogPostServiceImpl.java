@@ -12,6 +12,7 @@ public class BlogPostServiceImpl implements BlogPostService {
     BlogPostRepository blogPostRepository;
 
 
+
     @Override
     public BlogPost addNewBlogPost(BlogPost blogPost) {
         return blogPostRepository.save(blogPost);
@@ -27,6 +28,20 @@ public class BlogPostServiceImpl implements BlogPostService {
         blogPostRepository.deleteById(id);
     }
 
+    @Override
+    public BlogPost findBlogPostById(Long id) {
+        return blogPostRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public BlogPost editBlogPostById(Long id, BlogPost blogPost) {
+
+        BlogPost foundPost = findBlogPostById(id);
+        foundPost.setBlogEntry(blogPost.getBlogEntry());
+        foundPost.setAuthor(blogPost.getAuthor());
+        foundPost.setTitle(blogPost.getTitle());
+        return addNewBlogPost(foundPost);
+    }
 
 }
 
