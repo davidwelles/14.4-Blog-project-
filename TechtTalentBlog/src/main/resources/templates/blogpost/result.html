@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Blog Site</title>
-  <link href="webjars/bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/standard.css" rel="stylesheet">
-  <div th th:replace="/fragments/styling :: head-style"></div>
+  <div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 <body>
 <div th:replace="fragments/navbar :: navbar" ></div>
@@ -31,7 +29,7 @@
 </div>
 
 
-<script src="webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
+<div th:replace="/fragments/styling :: body-links" ></div>
+
 </body>
 </html>

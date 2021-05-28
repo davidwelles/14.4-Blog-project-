@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../css/standard.css" rel="stylesheet">
+  <div th:replace="/fragments/styling :: head-style" ></div>
 
 
 </head>
@@ -27,12 +26,12 @@
       <input type="text" class ="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
     </div>
 
-    <button class="btn btn-primary">Submit Your Post</button>
+    <button class="btn btn-primary">Submit</button>
   </form>
 </div>
 
-<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<div th:replace="/fragments/styling :: body-links" ></div>
+
 
 </body>
 </html>

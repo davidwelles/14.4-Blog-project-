@@ -20,6 +20,7 @@ color: black;
     max-width: 500px;
     max-height: auto;
     padding-bottom: 5px;
+    text-align: left;
 }
 .form-control{
 background-color: rgba(255,255,255,0.8);
